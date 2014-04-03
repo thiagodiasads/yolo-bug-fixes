@@ -6,16 +6,15 @@ import java.util.Date;
 
 import org.junit.Test;
 
-public class PrincipalTest {
+public class OrdemDeServicoTest {
 
 	@Test
 	public void testeCriarOrdemDeServicoComClienteExistenteEquipamentoExistente() {
-		Cliente cliente;
-		Equipamento equipamento;
 		OrdemDeServico ordemDeServico;
-		ordemDeServico = new OrdemDeServico(1,1,"Não liga");		
-		int codigo = ordemDeServico.getCodigo();
-		
+		ordemDeServico = OrdemDeServico.create(1, 1, "Não liga");
+		int actual = ordemDeServico.getCodigo();
+		int expected = 1;
+		assertEquals(expected, actual);
 	}
 
 }

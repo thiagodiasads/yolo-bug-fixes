@@ -14,6 +14,13 @@ public class OrdemDeServico {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+
+	public static OrdemDeServico create(int i, int j, String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 
