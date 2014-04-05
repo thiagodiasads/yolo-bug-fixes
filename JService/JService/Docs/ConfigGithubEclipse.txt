@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=ptK9-CNms98
+
+**IMPORTANTE**
+Aos 3:10 min. de vídeo ele pede para selecionar a opção "Import as general project", 
+no nosso caso devemos escolher "Import existing projects" !
