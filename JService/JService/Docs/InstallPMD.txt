@@ -1,0 +1,6 @@
+Caminho para instalação do plugin PMD: Help > Install New Software > Add;
+
+Name: PMD
+Location: http://pmd.sourceforge.net/eclipse
+
+Instalar a versão 4 (última).

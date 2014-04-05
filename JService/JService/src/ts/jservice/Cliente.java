@@ -5,7 +5,7 @@ public class Cliente {
 	private int codigoCliente;
 	private String cpf;
     private String email;
-	public static Cliente findClienteByEmail(String string) {
+	public static Cliente findClienteByEmail(String email) {
 		// TODO Auto-generated method stub
 		return null;
 	}
