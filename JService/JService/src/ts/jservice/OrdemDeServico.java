@@ -10,15 +10,17 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JTextArea;
-import javax.swing.AbstractAction;
 import javax.swing.Action;
+
+import ts.jservice.action.CancelarOSAction;
+import ts.jservice.action.GravarOSAction;
 
 
 public class OrdemDeServico extends JPanel {
 	private JTextField tfEquipamento;
 	private JTextField tfCliente;
-	private final Action actionGravarOrdem = new SwingAction();
-	private final Action actionCancelar = new SwingAction_1();
+	private final Action actionGravarOrdem = new GravarOSAction();
+	private final Action actionCancelar = new CancelarOSAction();
 
 	/**
 	 * Create the panel.
@@ -54,6 +56,10 @@ public class OrdemDeServico extends JPanel {
 		add(btnOk);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnCancelar.setAction(actionCancelar);
 		btnCancelar.setBounds(423, 420, 89, 23);
 		add(btnCancelar);
@@ -67,22 +73,5 @@ public class OrdemDeServico extends JPanel {
 		taProblema.setBounds(31, 243, 480, 105);
 		add(taProblema);
 
-	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "Gravar");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
-	}
-	private class SwingAction_1 extends AbstractAction {
-		public SwingAction_1() {
-			putValue(NAME, "Cancelar");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-			
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
 	}
 }
