@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 
+import javax.smartcardio.Card;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -17,10 +18,19 @@ import java.net.URL;
 
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
+
+import ts.jservice.OrdemDeServico;
+
+import java.awt.CardLayout;
 
 public class OSFrame extends JFrame {
 
 	private JPanel contentPane;
+	private final Action action = new SwingAction();
+	private CardLayout a;
 
 	/**
 	 * Launch the application.
@@ -43,7 +53,7 @@ public class OSFrame extends JFrame {
 	 */
 	public OSFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 560, 529);
 		configureFrame(this);
 
 		JMenuBar menuBar = new JMenuBar();
@@ -51,6 +61,9 @@ public class OSFrame extends JFrame {
 
 		JMenu mnArquivo = new JMenu("Arquivo");
 		menuBar.add(mnArquivo);
+		
+		JMenuItem mntmCadastrarOrdemDe = mnArquivo.add(action);
+		mntmCadastrarOrdemDe.setText("Cadastrar Ordem de Servi\u00E7o");
 
 		JMenu mnAjuda = new JMenu("Ajuda");
 		menuBar.add(mnAjuda);
@@ -59,8 +72,16 @@ public class OSFrame extends JFrame {
 		mnAjuda.add(mntmSobre);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		
+		 a = new CardLayout(0,0); 
+		JPanel p1 = new OrdemDeServico();
+		JPanel p2 = new JPanel();
+		contentPane.setLayout(a);
+		contentPane.add(p2, "p2");
+		contentPane.add(p1,"p1");
+		
+
 	}
 
 	private static void configureFrame(final JFrame frame) {
@@ -90,5 +111,16 @@ public class OSFrame extends JFrame {
 			}
 
 		});
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "Ordem De Serviço");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			
+			a.show(contentPane, "p1");
+			
+		}
 	}
 }
