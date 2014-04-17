@@ -67,7 +67,7 @@ public class OSFrame extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		URL iconFile = OSFrame.class
-				.getResource("/ts/service/swing/Image/TSIcon.png");
+				.getResource("/ts/jservice/swing/Image/TSIcon.png");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(iconFile));
 	}
 
