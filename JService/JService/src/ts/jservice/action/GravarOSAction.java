@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class GravarOSAction extends AbstractAction {
 	public GravarOSAction() {
 		putValue(NAME, "Gravar");
-		putValue(SHORT_DESCRIPTION, "Arquivos Salvos com Sucesso!");
+		putValue(SHORT_DESCRIPTION, "Gravar ordem de serviço.");
 	}
 	public void actionPerformed(ActionEvent e) {
 		
