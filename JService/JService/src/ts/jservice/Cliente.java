@@ -6,12 +6,14 @@ public class Cliente {
 	
 	private int codigoCliente;
 	private String email;
+    private String cpf;
     private static ArrayList<Cliente> clientlist;
     
 	public Cliente(int codigoCliente, String cpf, String email) {
 		super();
 		this.codigoCliente = codigoCliente;
 		this.email = email;
+		this.cpf = cpf;
 	}
 	public Cliente() {
 		// TODO Auto-generated constructor stub
@@ -36,10 +38,14 @@ public class Cliente {
 	public int getCodigoCliente() {
 		return codigoCliente;
 	}
+	
 	public String getEmail() {
 		return email;
-		
-		
+				
+	}
+	
+	public String getCpf() {
+		return cpf;
 	}
 		
 }
