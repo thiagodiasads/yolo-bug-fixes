@@ -1,5 +1,4 @@
 package ts.jservice;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,15 +8,21 @@ import ts.jservice.action.*;
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+
 public class OrdemDeServico extends JPanel {
 	private JTextField tfEquipamento;
 	private JTextField tfCliente;
+	private JTextArea taProblema;
 	private final Action actionGravarOrdem = new GravarOSAction();
 	private final Action actionCancelar = new CancelarOSAction();
+	
+	
+	
 
 	/**
 	 * Create the panel.
@@ -30,6 +35,10 @@ public class OrdemDeServico extends JPanel {
 		add(lblEquipamento);
 
 		tfEquipamento = new JTextField();
+		tfEquipamento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		tfEquipamento.setBounds(119, 71, 86, 20);
 		add(tfEquipamento);
 		tfEquipamento.setColumns(10);
@@ -46,15 +55,10 @@ public class OrdemDeServico extends JPanel {
 		JLabel lblProblema = new JLabel("Problema:");
 		lblProblema.setBounds(31, 208, 78, 14);
 		add(lblProblema);
+		
+		//Botão Gravar****************
 
-		JButton btnOk = new JButton("OK");
-		btnOk.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnOk.setAction(actionGravarOrdem);
-		btnOk.setBounds(324, 420, 89, 23);
-		add(btnOk);
+		
 
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.addActionListener(new ActionListener() {

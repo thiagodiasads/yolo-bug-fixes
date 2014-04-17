@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="JService/JService/src"/>
 	<classpathentry kind="src" path="JService/JService/tst"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="postgresql-9.2-1000.jdbc4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

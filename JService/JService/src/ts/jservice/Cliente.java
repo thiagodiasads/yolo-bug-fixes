@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Cliente {
 	
 	private int codigoCliente;
-    private String email;
+	private String email;
     private static ArrayList<Cliente> clientlist;
     
 	public Cliente(int codigoCliente, String cpf, String email) {
