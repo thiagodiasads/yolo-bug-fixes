@@ -4,13 +4,13 @@ public class OrdemDeServico {
 
 	private int cliente;
 	private int equipamento;
-	private String descricao;
+	private String problema;
 
 	public OrdemDeServico(int cliente, int equipamento, String descricao) {
 		super();
 		this.cliente = cliente;
 		this.equipamento = equipamento;
-		this.descricao = descricao;
+		this.problema = descricao;
 	}
 
 	public int getCliente() {
@@ -22,14 +22,14 @@ public class OrdemDeServico {
 	}
 
 	public String getDescricao() {
-		return descricao;
+		return problema;
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
 				"OrdemDeServico [cliente=%s, equipamento=%s, descricao=%s]",
-				cliente, equipamento, descricao);
+				cliente, equipamento, problema);
 	}
 
 }

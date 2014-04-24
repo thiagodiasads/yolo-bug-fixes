@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import ts.jservice.OrdemDeServico;
 import ts.jservice.action.CancelarOSAction;
 import ts.jservice.action.GravarOSAction;
 
@@ -68,6 +69,13 @@ public class OrdemDeServicoPanel extends JPanel {
 
 		btnGravar.setBounds(291, 420, 89, 23);
 		add(btnGravar);
+
+	}
+
+	public OrdemDeServico getOrdemDeServico() {
+
+		return new OrdemDeServico(Integer.parseInt(tfCliente.getText()),
+				Integer.parseInt(tfEquipamento.getText()), taProblema.getText());
 
 	}
 }
