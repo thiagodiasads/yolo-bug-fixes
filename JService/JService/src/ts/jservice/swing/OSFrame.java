@@ -22,7 +22,6 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 
-import ts.jservice.OrdemDeServico;
 
 import java.awt.CardLayout;
 
@@ -75,7 +74,7 @@ public class OSFrame extends JFrame {
 		setContentPane(contentPane);
 		
 		 a = new CardLayout(0,0); 
-		JPanel p1 = new OrdemDeServico();
+		JPanel p1 = new OrdemDeServicoPanel();
 		JPanel p2 = new JPanel();
 		contentPane.setLayout(a);
 		contentPane.add(p2, "p2");

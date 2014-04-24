@@ -1,33 +1,28 @@
-package ts.jservice;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package ts.jservice.swing;
 
-import ts.jservice.action.*;
+import java.awt.Font;
 
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import ts.jservice.action.CancelarOSAction;
+import ts.jservice.action.GravarOSAction;
 
-public class OrdemDeServico extends JPanel {
+public class OrdemDeServicoPanel extends JPanel {
 	private JTextField tfEquipamento;
 	private JTextField tfCliente;
 	private JTextArea taProblema;
-	private final Action actionGravarOrdem = new GravarOSAction();
+	private final Action actionGravarOrdem = new GravarOSAction(this);
 	private final Action actionCancelar = new CancelarOSAction();
-	
-	
-	
 
 	/**
 	 * Create the panel.
 	 */
-	public OrdemDeServico() {
+	public OrdemDeServicoPanel() {
 		setLayout(null);
 
 		JLabel lblEquipamento = new JLabel("Equipamento:");
@@ -35,10 +30,6 @@ public class OrdemDeServico extends JPanel {
 		add(lblEquipamento);
 
 		tfEquipamento = new JTextField();
-		tfEquipamento.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		tfEquipamento.setBounds(119, 71, 86, 20);
 		add(tfEquipamento);
 		tfEquipamento.setColumns(10);
@@ -55,29 +46,28 @@ public class OrdemDeServico extends JPanel {
 		JLabel lblProblema = new JLabel("Problema:");
 		lblProblema.setBounds(31, 208, 78, 14);
 		add(lblProblema);
-		
-		//Botão Gravar****************
-
-		
 
 		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+
 		btnCancelar.setAction(actionCancelar);
 		btnCancelar.setBounds(423, 420, 89, 23);
 		add(btnCancelar);
 
-		JLabel lblOrdemDeServio = new JLabel("Ordem de Servi\u00E7o");
-		lblOrdemDeServio
+		JLabel lblOrdemDeServico = new JLabel("Ordem de Servi\u00E7o");
+		lblOrdemDeServico
 				.setFont(new Font("Traditional Arabic", Font.PLAIN, 17));
-		lblOrdemDeServio.setBounds(204, 11, 139, 23);
-		add(lblOrdemDeServio);
+		lblOrdemDeServico.setBounds(204, 11, 139, 23);
+		add(lblOrdemDeServico);
 
 		JTextArea taProblema = new JTextArea();
 		taProblema.setBounds(31, 243, 480, 105);
 		add(taProblema);
+
+		JButton btnGravar = new JButton("Gravar");
+		btnGravar.setAction(actionGravarOrdem);
+
+		btnGravar.setBounds(291, 420, 89, 23);
+		add(btnGravar);
 
 	}
 }
