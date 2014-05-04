@@ -1,29 +1,24 @@
 package ts.jservice.swing;
 
-import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
-
-import javax.smartcardio.Card;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JMenuBar;
-import javax.swing.JPopupMenu;
-
-import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 
-import javax.swing.JMenuItem;
-import javax.swing.JMenu;
 import javax.swing.AbstractAction;
-import java.awt.event.ActionEvent;
 import javax.swing.Action;
-
-
-import java.awt.CardLayout;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.border.EmptyBorder;
 
 public class OSFrame extends JFrame {
 
@@ -60,27 +55,39 @@ public class OSFrame extends JFrame {
 
 		JMenu mnArquivo = new JMenu("Arquivo");
 		menuBar.add(mnArquivo);
-		
+
 		JMenuItem mntmCadastrarOrdemDe = mnArquivo.add(action);
 		mntmCadastrarOrdemDe.setText("Cadastrar Ordem de Servi\u00E7o");
+
+		JMenuItem mntmSair = mnArquivo.add(action);
+		mntmSair.setText("Sair");
 
 		JMenu mnAjuda = new JMenu("Ajuda");
 		menuBar.add(mnAjuda);
 
 		JMenuItem mntmSobre = new JMenuItem("Sobre");
 		mnAjuda.add(mntmSobre);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
-		 a = new CardLayout(0,0); 
+
+		a = new CardLayout(0, 0);
 		JPanel p1 = new OrdemDeServicoPanel();
 		JPanel p2 = new JPanel();
 		contentPane.setLayout(a);
 		contentPane.add(p2, "p2");
-		contentPane.add(p1,"p1");
+		contentPane.add(p1, "p1");
 		
-
+		//
+		mntmSair.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+				
+			}
+		});
+		//
 	}
 
 	private static void configureFrame(final JFrame frame) {
@@ -111,15 +118,17 @@ public class OSFrame extends JFrame {
 
 		});
 	}
+
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "Ordem De Serviço");
-			putValue(SHORT_DESCRIPTION, "Some short description");
+			putValue(SHORT_DESCRIPTION, "Cadastro de ordem");
 		}
+
 		public void actionPerformed(ActionEvent e) {
-			
+
 			a.show(contentPane, "p1");
-			
+
 		}
 	}
 }

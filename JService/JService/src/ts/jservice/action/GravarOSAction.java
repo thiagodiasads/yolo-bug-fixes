@@ -18,6 +18,5 @@ public class GravarOSAction extends AbstractAction {
 
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Teste");
-		
 	}
 }
