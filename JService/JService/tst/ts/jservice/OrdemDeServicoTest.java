@@ -15,11 +15,10 @@ public class OrdemDeServicoTest {
 	 */
 	@Test
 	public void testeCriarOrdemDeServicoComClienteExistenteEquipamentoExistente() {
-		OrdemDeServicoPanel ordemDeServico;
-		//ordemDeServico = OrdemDeServico.create(1, 1, "Não liga");
-		//int actual = ordemDeServico.getCodigo();
+		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga");
+		int actual = ordem.getCliente();
 		int expected = 1;
-	//	assertEquals(expected, actual);
+		assertEquals(expected, actual);
 	}
 
 }
