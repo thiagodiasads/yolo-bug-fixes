@@ -1,21 +1,22 @@
 package ts.jservice.action;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
-
+import ts.jservice.swing.OrdemDeServicoPanel;
 
 public class GravarOSAction extends AbstractAction {
-	public GravarOSAction() {
+	private OrdemDeServicoPanel ordemDeServico;
+
+	public GravarOSAction(OrdemDeServicoPanel ordemDeServico) {
 		putValue(NAME, "Gravar");
 		putValue(SHORT_DESCRIPTION, "Gravar ordem de serviço.");
+		this.ordemDeServico = ordemDeServico;
+
 	}
+
 	public void actionPerformed(ActionEvent e) {
-		
-		
+		System.out.println("Teste");
 	}
 }

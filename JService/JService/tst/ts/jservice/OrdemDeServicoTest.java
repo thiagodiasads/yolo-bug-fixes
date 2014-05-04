@@ -6,6 +6,8 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import ts.jservice.swing.OrdemDeServicoPanel;
+
 public class OrdemDeServicoTest {
 
 	/**
@@ -13,7 +15,7 @@ public class OrdemDeServicoTest {
 	 */
 	@Test
 	public void testeCriarOrdemDeServicoComClienteExistenteEquipamentoExistente() {
-		OrdemDeServico ordemDeServico;
+		OrdemDeServicoPanel ordemDeServico;
 		//ordemDeServico = OrdemDeServico.create(1, 1, "Não liga");
 		//int actual = ordemDeServico.getCodigo();
 		int expected = 1;
