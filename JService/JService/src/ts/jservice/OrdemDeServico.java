@@ -5,12 +5,14 @@ public class OrdemDeServico {
 	private int cliente;
 	private int equipamento;
 	private String problema;
+	private int id_os;
 
-	public OrdemDeServico(int cliente, int equipamento, String descricao) {
+	public OrdemDeServico(int cliente, int equipamento, String descricao, int id_os) {
 		super();
 		this.cliente = cliente;
 		this.equipamento = equipamento;
 		this.problema = descricao;
+		this.id_os = id_os;
 	}
 
 	public int getCliente() {
