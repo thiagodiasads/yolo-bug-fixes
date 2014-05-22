@@ -78,4 +78,6 @@ public class OrdemDeServicoPanel extends JPanel {
 				Integer.parseInt(tfEquipamento.getText()), taProblema.getText());
 
 	}
+	
+
 }
