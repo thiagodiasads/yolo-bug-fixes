@@ -80,7 +80,6 @@ public class OrdemDeServicoPanel extends JPanel {
 		System.out.println("aqui");
 		return new OrdemDeServico(Integer.parseInt(tfCliente.getText()),
 				Integer.parseInt(tfEquipamento.getText()), taProblema.getText(), 1);
-
 	}
-	
+
 }

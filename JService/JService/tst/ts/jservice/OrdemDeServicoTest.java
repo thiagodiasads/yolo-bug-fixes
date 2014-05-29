@@ -15,6 +15,7 @@ public class OrdemDeServicoTest {
 	 */
 	@Test
 	public void testeCriarOrdemDeServicoComClienteExistenteEquipamentoExistente() {
+
 		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga",1);
 		int actual = ordem.getCliente();
 		int expected = 1;

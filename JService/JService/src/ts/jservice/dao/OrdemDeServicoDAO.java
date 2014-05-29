@@ -12,8 +12,9 @@ import ts.jservice.OrdemDeServico;
 
 public class OrdemDeServicoDAO {
 
-	
 	public void insertOrdemDeServico(final OrdemDeServico os) {
+
+
 		final String cmd = "insert into ordensdeservico(cliente, equipamento, problema) values (?, ?, ?)";
 
 		Connection connection = null;

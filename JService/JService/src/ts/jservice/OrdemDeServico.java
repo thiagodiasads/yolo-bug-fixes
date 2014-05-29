@@ -11,12 +11,17 @@ public class OrdemDeServico {
 	private String problema;
 	private int id_os;
 
-	public OrdemDeServico(int cliente, int equipamento, String descricao, int id_os) {
+	public OrdemDeServico(int cliente, int equipamento, String problema,
+			int id_os) {
 		super();
 		this.cliente = cliente;
 		this.equipamento = equipamento;
-		this.problema = descricao;
+		this.problema = problema;
 		this.id_os = id_os;
+	}
+
+	public OrdemDeServico(int cliente, int equipamento, String problema) {
+		this(equipamento, cliente, problema, -1);
 	}
 	
 	public OrdemDeServico() {
@@ -60,13 +65,14 @@ public class OrdemDeServico {
 
 	public void setId_os(int id_os) {
 		this.id_os = id_os;
+
 	}
 
 	@Override
 	public String toString() {
-		return String.format(
-				"OrdemDeServico [cliente=%s, equipamento=%s, descricao=%s]",
-				cliente, equipamento, problema);
+		return String
+				.format("OrdemDeServico [cliente=%s, equipamento=%s, descricao=%s]",
+						cliente, equipamento, problema);
 	}
 	
 	
