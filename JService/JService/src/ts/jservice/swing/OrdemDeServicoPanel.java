@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+
 import ts.jservice.OrdemDeServico;
 import ts.jservice.action.CancelarOSAction;
 import ts.jservice.action.GravarOSAction;
@@ -19,7 +20,7 @@ public class OrdemDeServicoPanel extends JPanel {
 	private JTextArea taProblema;
 	private final Action actionGravarOrdem = new GravarOSAction(this);
 	private final Action actionCancelar = new CancelarOSAction();
-
+	
 	/**
 	 * Create the panel.
 	 */
@@ -72,10 +73,14 @@ public class OrdemDeServicoPanel extends JPanel {
 
 	}
 
-	public OrdemDeServico getOrdemDeServico() {
+	/*Foi criado os get and set do novo atributo id_os, falta acrescentar no return
+	da classe abaixo.*/
 
+	public OrdemDeServico getOrdemDeServico() {
+		System.out.println("aqui");
 		return new OrdemDeServico(Integer.parseInt(tfCliente.getText()),
-				Integer.parseInt(tfEquipamento.getText()), taProblema.getText());
+				Integer.parseInt(tfEquipamento.getText()), taProblema.getText(), 1);
 
 	}
+	
 }

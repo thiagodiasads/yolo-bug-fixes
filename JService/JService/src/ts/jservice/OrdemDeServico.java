@@ -1,5 +1,9 @@
 package ts.jservice;
 
+
+import ts.jservice.dao.OrdemDeServicoDAO;
+import ts.jservice.swing.OrdemDeServicoPanel;
+
 public class OrdemDeServico {
 
 	private int cliente;
@@ -14,6 +18,27 @@ public class OrdemDeServico {
 		this.problema = descricao;
 		this.id_os = id_os;
 	}
+	
+	public OrdemDeServico() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public String getProblema() {
+		return problema;
+	}
+
+	public void setProblema(String problema) {
+		this.problema = problema;
+	}
+
+	public void setCliente(int cliente) {
+		this.cliente = cliente;
+	}
+
+	public void setEquipamento(int equipamento) {
+		this.equipamento = equipamento;
+	}
 
 	public int getCliente() {
 		return cliente;
@@ -27,11 +52,34 @@ public class OrdemDeServico {
 		return problema;
 	}
 
+	//Foi criado os get and set do novo atributo id_os.
+		
+	public int getId_os() {
+		return id_os;
+	}
+
+	public void setId_os(int id_os) {
+		this.id_os = id_os;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
 				"OrdemDeServico [cliente=%s, equipamento=%s, descricao=%s]",
 				cliente, equipamento, problema);
 	}
-
-}
+	
+	
+	public static void gravaOrdem ( OrdemDeServico os){
+		
+		OrdemDeServicoDAO con = new OrdemDeServicoDAO();
+		con.insertOrdemDeServico(os);
+		
+		
+		
+	}	
+		
+		
+	}
+	
+	
