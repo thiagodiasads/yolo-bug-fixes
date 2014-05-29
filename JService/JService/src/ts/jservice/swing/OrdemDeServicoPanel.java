@@ -10,9 +10,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 
-import ts.jservice.OrdemDeServico;
+
+
 import ts.jservice.action.CancelarOSAction;
 import ts.jservice.action.GravarOSAction;
+import ts.jservice.pojo.OrdemDeServico;
 
 public class OrdemDeServicoPanel extends JPanel {
 	private JTextField tfEquipamento;

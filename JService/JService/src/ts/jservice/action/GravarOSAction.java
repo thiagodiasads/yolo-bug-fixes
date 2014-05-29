@@ -1,18 +1,16 @@
 package ts.jservice.action;
 
 import java.awt.event.ActionEvent;
+
 import javax.swing.*;
 
-
-//
 import ts.jservice.dao.OrdemDeServicoDAO;
+import ts.jservice.pojo.OrdemDeServico;
 import ts.jservice.swing.OrdemDeServicoPanel;
-import ts.jservice.OrdemDeServico;
 
 //
 
 
-import ts.jservice.swing.OrdemDeServicoPanel;
 
 public class GravarOSAction extends AbstractAction {
 	private OrdemDeServicoPanel ordemDeServico;

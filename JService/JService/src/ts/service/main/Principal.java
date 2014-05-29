@@ -1,4 +1,4 @@
-package ts.jservice;
+package ts.service.main;
 
 import javax.swing.JOptionPane;
 

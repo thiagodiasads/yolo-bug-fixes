@@ -1,4 +1,4 @@
-package ts.jservice;
+package ts.jservice.pojo;
 
 
 import ts.jservice.dao.OrdemDeServicoDAO;

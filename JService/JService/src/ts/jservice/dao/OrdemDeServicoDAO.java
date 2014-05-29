@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import ts.jservice.OrdemDeServico;
+import ts.jservice.pojo.OrdemDeServico;
 
 
 public class OrdemDeServicoDAO {

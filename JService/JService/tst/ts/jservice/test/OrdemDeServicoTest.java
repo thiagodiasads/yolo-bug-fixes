@@ -1,4 +1,4 @@
-package ts.jservice;
+package ts.jservice.test;
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import ts.jservice.pojo.OrdemDeServico;
 import ts.jservice.swing.OrdemDeServicoPanel;
 
 public class OrdemDeServicoTest {

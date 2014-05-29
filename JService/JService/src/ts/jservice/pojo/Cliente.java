@@ -1,4 +1,4 @@
-package ts.jservice;
+package ts.jservice.pojo;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,10 @@
-package ts.jservice;
+package ts.jservice.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import ts.jservice.pojo.Cliente;
 
 public class ClienteTest {
 
