@@ -63,7 +63,7 @@ public class OrdemDeServicoPanel extends JPanel {
 		lblOrdemDeServico.setBounds(204, 11, 139, 23);
 		add(lblOrdemDeServico);
 
-		JTextArea taProblema = new JTextArea();
+		taProblema = new JTextArea();
 		taProblema.setBounds(31, 243, 480, 105);
 		add(taProblema);
 
@@ -80,8 +80,10 @@ public class OrdemDeServicoPanel extends JPanel {
 
 	public OrdemDeServico getOrdemDeServico() {
 		System.out.println("aqui");
-		return new OrdemDeServico(Integer.parseInt(tfCliente.getText()),
-				Integer.parseInt(tfEquipamento.getText()), taProblema.getText(), 1);
+		int cliente = Integer.parseInt(tfCliente.getText());
+		int equipamento = Integer.parseInt(tfEquipamento.getText());
+		String problema = taProblema.getText();
+		return new OrdemDeServico(cliente, equipamento, problema);
 	}
 
 }
