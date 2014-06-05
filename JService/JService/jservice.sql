@@ -1,4 +1,4 @@
-/*Este comando seta o BD que ser· utilizado para os creates e inserts abaixo!*/
+/*Este comando seta o BD que ser√° utilizado para os creates e inserts abaixo!*/
 use jservice_bd;
 /*Depois de "setar" o BD, executar os scripts de creates e inserts!*/
 create table clientes (
@@ -32,8 +32,8 @@ CONSTRAINT ordensdeservico_pkey PRIMARY KEY (id_os),
       REFERENCES equipamentos (codigo_equipamento) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );
-/*Ordem de serviÁo inicial para testes!*/
+/*Ordem de servi√ßo inicial para testes!*/
 insert into ordensdeservico (codigo_cliente_os, codigo_equipamento_os, problema_os) values 
-( 1 , 1, 'N„o liga');
-/*Comando que verifica as propriedades da tabela, como o prÛximo valor do auto increment!*/
+( 1 , 1, 'N√£o liga');
+/*Comando que verifica as propriedades da tabela, como o pr√≥ximo valor do auto increment!*/
 SHOW TABLE STATUS LIKE 'ordensdeservico'

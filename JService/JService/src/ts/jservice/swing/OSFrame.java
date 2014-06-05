@@ -78,13 +78,13 @@ public class OSFrame extends JFrame {
 		contentPane.setLayout(a);
 		contentPane.add(p2, "p2");
 		contentPane.add(p1, "p1");
-		
+
 		//
 		mntmSair.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
-				
+
 			}
 		});
 		//
@@ -119,8 +119,6 @@ public class OSFrame extends JFrame {
 		});
 	}
 
-	
-	
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "Ordem De Serviço");

@@ -10,8 +10,6 @@ import ts.jservice.swing.OrdemDeServicoPanel;
 
 //
 
-
-
 public class GravarOSAction extends AbstractAction {
 	private OrdemDeServicoPanel ordemDeServico;
 
@@ -19,25 +17,21 @@ public class GravarOSAction extends AbstractAction {
 		putValue(NAME, "Gravar");
 		putValue(SHORT_DESCRIPTION, "Gravar ordem de serviço.");
 		this.ordemDeServico = ordemDeServico;
-		
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Teste");
 	}
-	
-	
+
 	/*
-	public void gravaOrdem (int objOrdemDeServico){
-		
-		OrdemDeServicoDAO con = new OrdemDeServicoDAO();
-		OrdemDeServico os = new OrdemDeServico();
-		OrdemDeServicoPanel osp = new OrdemDeServicoPanel();
-		
-				
-		os.setId_os(objOrdemDeServico);
-		osp.set
-	
-	*/
-	
+	 * public void gravaOrdem (int objOrdemDeServico){
+	 * 
+	 * OrdemDeServicoDAO con = new OrdemDeServicoDAO(); OrdemDeServico os = new
+	 * OrdemDeServico(); OrdemDeServicoPanel osp = new OrdemDeServicoPanel();
+	 * 
+	 * 
+	 * os.setId_os(objOrdemDeServico); osp.set
+	 */
+
 }
