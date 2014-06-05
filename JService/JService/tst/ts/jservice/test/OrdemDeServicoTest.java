@@ -17,39 +17,39 @@ public class OrdemDeServicoTest {
 	@Test
 	public void testeCriarOrdemDeServicoComClienteExistenteEquipamentoExistente() {
 
-		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga",1);
+		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga");
 		int actual = ordem.getCliente();
 		int expected = 1;
 		assertEquals(expected, actual);
 	}
-	
-	
+
 	/**
 	 * adicionado o ultimo parametro por causa do id
 	 */
 	@Test
 	public void testeGravarOrdemDeServicoComClienteExistenteEquipamentoExistente() {
 		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga");
-//		int actual = ordem.getCliente();
-//		int expected = 1;
-//		assertEquals(expected, actual);
+		// int actual = ordem.getCliente();
+		// int expected = 1;
+		// assertEquals(expected, actual);
+
 
 		/**
 		 * criar metodo na classe OrdemServico
-		 */	
-	//OrdemDeServico.gravarOrdem(ordem);
+		 */
+		// OrdemDeServico.gravarOrdem(ordem);
 	}
 
-	
 	@Test
 	public void testeGravarOS() {
 		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga");
-		
-		OrdemDeServico.gravaOrdem(ordem); 
-		
-//		int actual = ordem.getCliente();
-//		int expected = 1;
-//		assertEquals(expected, actual);
+
+		OrdemDeServico.gravaOrdem(ordem);
+
+		// int actual = ordem.getCliente();
+		// int expected = 1;
+		// assertEquals(expected, actual);
+
 	}
-	
+
 }

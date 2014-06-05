@@ -78,13 +78,13 @@ public class OSFrame extends JFrame {
 		contentPane.setLayout(a);
 		contentPane.add(p2, "p2");
 		contentPane.add(p1, "p1");
-		
+
 		//
 		mntmSair.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
-				
+
 			}
 		});
 		//
@@ -93,9 +93,9 @@ public class OSFrame extends JFrame {
 	private static void configureFrame(final JFrame frame) {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		URL iconFile = OSFrame.class
-				.getResource("/ts/jservice/swing/Image/TSIcon.png");
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(iconFile));
+//		URL iconFile = OSFrame.class
+//				.getResource("/ts/jservice/swing/Image/TSIcon.png");
+//		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(iconFile));
 	}
 
 	private static void addPopup(Component component, final JPopupMenu popup) {
@@ -119,8 +119,6 @@ public class OSFrame extends JFrame {
 		});
 	}
 
-	
-	
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "Ordem De Serviço");
