@@ -29,7 +29,7 @@ public class OrdemDeServicoTest {
 	 */
 	@Test
 	public void testeGravarOrdemDeServicoComClienteExistenteEquipamentoExistente() {
-		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga",1);
+		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga");
 //		int actual = ordem.getCliente();
 //		int expected = 1;
 //		assertEquals(expected, actual);
@@ -43,7 +43,7 @@ public class OrdemDeServicoTest {
 	
 	@Test
 	public void testeGravarOS() {
-		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga",1);
+		OrdemDeServico ordem = new OrdemDeServico(1, 1, "Não liga");
 		
 		OrdemDeServico.gravaOrdem(ordem); 
 		
