@@ -8,11 +8,8 @@ import ts.jservice.dao.OrdemDeServicoDAO;
 import ts.jservice.pojo.OrdemDeServico;
 import ts.jservice.swing.OrdemDeServicoPanel;
 
-//
-
 public class GravarOSAction extends AbstractAction {
 	private OrdemDeServicoPanel ordemDeServico;
-
 
 	public GravarOSAction(OrdemDeServicoPanel ordemDeServico) {
 		putValue(NAME, "Gravar");

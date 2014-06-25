@@ -9,11 +9,9 @@ import java.util.Properties;
 
 import ts.jservice.pojo.OrdemDeServico;
 
-
 public class OrdemDeServicoDAO {
 
 	public void insertOrdemDeServico(final OrdemDeServico os) {
-
 
 		final String cmd = "insert into ordensdeservico(codigo_cliente_os, codigo_equipamento_os, problema_os) values (?, ?, ?)";
 
@@ -40,12 +38,12 @@ public class OrdemDeServicoDAO {
 			if (r != 1) {
 				throw new Exception("Erro ao inserir Ordem de Servico!");
 			}
-			
-			//ResultSet x = statement.getGeneratedKeys();
-			//x.next();
-			//int k = x.getInt(1);
-			//Implementar método setId_os na classe OrdemDeServico.java
-			//os.setId_os(k);
+
+			// ResultSet x = statement.getGeneratedKeys();
+			// x.next();
+			// int k = x.getInt(1);
+			// Implementar método setId_os na classe OrdemDeServico.java
+			// os.setId_os(k);
 
 		} catch (Exception e) {
 			e.printStackTrace();

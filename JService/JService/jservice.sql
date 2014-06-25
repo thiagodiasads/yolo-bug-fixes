@@ -37,3 +37,9 @@ insert into ordensdeservico (codigo_cliente_os, codigo_equipamento_os, problema_
 ( 1 , 1, 'Não liga');
 /*Comando que verifica as propriedades da tabela, como o próximo valor do auto increment!*/
 SHOW TABLE STATUS LIKE 'ordensdeservico'
+
+/*Novo usuário*/
+revoke all on jservice_bd.* from 'jservice'@'%';
+drop user 'jservice'@'%';
+GRANT delete,update,select,insert on jservice_bd.* to 'jservice'@'%' identified by 'jservice';
+flush privileges;

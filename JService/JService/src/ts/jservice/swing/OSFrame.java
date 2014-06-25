@@ -93,9 +93,9 @@ public class OSFrame extends JFrame {
 	private static void configureFrame(final JFrame frame) {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-//		URL iconFile = OSFrame.class
-//				.getResource("/ts/jservice/swing/Image/TSIcon.png");
-//		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(iconFile));
+		// URL iconFile = OSFrame.class
+		// .getResource("/ts/jservice/swing/Image/TSIcon.png");
+		// frame.setIconImage(Toolkit.getDefaultToolkit().getImage(iconFile));
 	}
 
 	private static void addPopup(Component component, final JPopupMenu popup) {

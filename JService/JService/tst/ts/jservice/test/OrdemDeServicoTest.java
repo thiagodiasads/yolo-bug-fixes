@@ -33,7 +33,6 @@ public class OrdemDeServicoTest {
 		// int expected = 1;
 		// assertEquals(expected, actual);
 
-
 		/**
 		 * criar metodo na classe OrdemServico
 		 */
