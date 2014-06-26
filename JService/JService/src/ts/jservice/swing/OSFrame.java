@@ -4,10 +4,12 @@ import java.awt.CardLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -69,9 +71,16 @@ public class OSFrame extends JFrame {
 		JMenu mnAjuda = new JMenu("Ajuda");
 		menuBar.add(mnAjuda);
 
-		JMenuItem mntmSobre = new JMenuItem("Sobre");
+		final JMenuItem mntmSobre = new JMenuItem("Sobre");
+		mntmSobre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null,"TecnoService\nJService é um sistema gerenciador de ordens "
+						+ "de serviço\nPermite cadastros de clientes, equipamentos, defeitos e laudos.\n"
+						+ "V1.0\n"
+						+ "Desenvolvimento: Thiago Dias, Cristiane Marques e Shirlei Oliveira.");
+			}
+		});
 		mnAjuda.add(mntmSobre);
-
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
