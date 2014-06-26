@@ -2,8 +2,10 @@ package ts.jservice.swing;
 
 import java.awt.CardLayout;
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -44,7 +46,7 @@ public class OSFrame extends JFrame {
 	public OSFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 560, 529);
-
+		configureFrame(this);
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -74,9 +76,9 @@ public class OSFrame extends JFrame {
 		final JMenuItem mntmSobre = new JMenuItem("Sobre");
 		mntmSobre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null,"TecnoService\nJService é um sistema gerenciador de ordens "
-						+ "de serviço\nPermite cadastros de clientes, equipamentos, defeitos e laudos.\n"
-						+ "V1.0\n"
+				JOptionPane.showMessageDialog(null,"TecnoService V1.0\nJService é um sistema gerenciador de ordens "
+						+ "de serviço.\nPermite cadastros de clientes, equipamentos, defeitos e laudos.\n"
+						+ "\n"
 						+ "Desenvolvimento: Thiago Dias, Cristiane Marques e Shirlei Oliveira.");
 			}
 		});
@@ -90,6 +92,14 @@ public class OSFrame extends JFrame {
 		contentPane.setLayout(new CardLayout());
 		contentPane.add(principal, OSFrame.PAINEL_PRINCIPAL);
 		contentPane.add(ordemDeServicoPanel, OSFrame.PAINEL_CADASTRAR_OS);
+	}
+	
+	private static void configureFrame(final JFrame frame) {
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		URL iconFile = OSFrame.class
+				.getResource("/ts/jservice/Image/TSIcon.png");
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(iconFile));
 	}
 
 	public JPanel getContentPane() {
