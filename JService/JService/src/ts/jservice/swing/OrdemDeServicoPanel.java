@@ -14,16 +14,20 @@ import ts.jservice.action.GravarOSAction;
 import ts.jservice.pojo.OrdemDeServico;
 
 public class OrdemDeServicoPanel extends JPanel {
+	
+	private static final long serialVersionUID = -9107893096031621113L;
 	private JTextField tfEquipamento;
 	private JTextField tfCliente;
 	private JTextArea taProblema;
 	private final Action actionGravarOrdem = new GravarOSAction(this);
-	private final Action actionCancelar = new CancelarOSAction();
+	private final Action actionCancelar = new CancelarOSAction(this);
+	private final OSFrame framePrincipal;
 
 	/**
 	 * Create the panel.
 	 */
-	public OrdemDeServicoPanel() {
+	public OrdemDeServicoPanel(OSFrame framePrincipal) {
+		this.framePrincipal = framePrincipal;
 		setLayout(null);
 
 		JLabel lblEquipamento = new JLabel("Equipamento:");
@@ -69,20 +73,25 @@ public class OrdemDeServicoPanel extends JPanel {
 
 		btnGravar.setBounds(291, 420, 89, 23);
 		add(btnGravar);
-
 	}
 
 	/*
 	 * Foi criado os get and set do novo atributo id_os, falta acrescentar no
 	 * return da classe abaixo.
 	 */
-
-	public OrdemDeServico getOrdemDeServico() {
-		System.out.println("aqui");
-		int cliente = Integer.parseInt(tfCliente.getText());
-		int equipamento = Integer.parseInt(tfEquipamento.getText());
-		String problema = taProblema.getText();
-		return new OrdemDeServico(cliente, equipamento, problema);
+	public OrdemDeServico getOrdemDeServico() throws Exception {
+		try {
+			int cliente = Integer.parseInt(tfCliente.getText());
+			int equipamento = Integer.parseInt(tfEquipamento.getText());
+			String problema = taProblema.getText();
+			return new OrdemDeServico(cliente, equipamento, problema);
+		} catch(NumberFormatException e) {
+			//JOptionPane.showMessageDialog(framePrincipal, "Informar apenas algarismos nos códigos de cliente e de equipamentos");
+			throw new Exception("Informar apenas algarismos nos códigos de cliente e de equipamentos");
+		}
 	}
 
+	public OSFrame getFramePrincipal() {
+		return framePrincipal;
+	}
 }

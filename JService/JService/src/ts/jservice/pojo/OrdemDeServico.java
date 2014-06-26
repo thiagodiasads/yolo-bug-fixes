@@ -1,8 +1,5 @@
 package ts.jservice.pojo;
 
-import ts.jservice.dao.OrdemDeServicoDAO;
-import ts.jservice.swing.OrdemDeServicoPanel;
-
 public class OrdemDeServico {
 
 	private int cliente;
@@ -12,7 +9,6 @@ public class OrdemDeServico {
 
 	public OrdemDeServico(int cliente, int equipamento, String problema,
 			int id_os) {
-		super();
 		this.cliente = cliente;
 		this.equipamento = equipamento;
 		this.problema = problema;
@@ -72,12 +68,4 @@ public class OrdemDeServico {
 				"OrdemDeServico [cliente=%s, equipamento=%s, descricao=%s]",
 				cliente, equipamento, problema);
 	}
-
-	public static void gravaOrdem(OrdemDeServico os) {
-
-		OrdemDeServicoDAO con = new OrdemDeServicoDAO();
-		con.insertOrdemDeServico(os);
-
-	}
-
 }

@@ -1,30 +1,24 @@
 package ts.jservice.swing;
 
 import java.awt.CardLayout;
-import java.awt.Component;
 import java.awt.EventQueue;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.net.URL;
-
-import javax.swing.AbstractAction;
-import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
 import javax.swing.border.EmptyBorder;
 
 public class OSFrame extends JFrame {
 
+	private static final long serialVersionUID = 2894872370201254311L;
+	
 	private JPanel contentPane;
-	private final Action action = new SwingAction();
-	private CardLayout a;
+	
+	public static final String PAINEL_PRINCIPAL = "PRINCIPAL";
+	public static final String PAINEL_CADASTRAR_OS = "CADASTRAR_OS";
 
 	/**
 	 * Launch the application.
@@ -48,20 +42,30 @@ public class OSFrame extends JFrame {
 	public OSFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 560, 529);
-		configureFrame(this);
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-
+		
 		JMenu mnArquivo = new JMenu("Arquivo");
 		menuBar.add(mnArquivo);
 
-		JMenuItem mntmCadastrarOrdemDe = mnArquivo.add(action);
-		mntmCadastrarOrdemDe.setText("Cadastrar Ordem de Servi\u00E7o");
-
-		JMenuItem mntmSair = mnArquivo.add(action);
-		mntmSair.setText("Sair");
-
+		JMenuItem mntmCadastrarOrdemDe = new JMenuItem("Cadastrar Ordem de Servi\u00E7o");
+		mnArquivo.add(mntmCadastrarOrdemDe);
+		mntmCadastrarOrdemDe.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				showFrame(OSFrame.PAINEL_CADASTRAR_OS);
+			}
+		});
+		JMenuItem mntmSair = new JMenuItem("Sair");
+		mnArquivo.add(mntmSair);
+		mntmSair.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		
 		JMenu mnAjuda = new JMenu("Ajuda");
 		menuBar.add(mnAjuda);
 
@@ -71,64 +75,20 @@ public class OSFrame extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-
-		a = new CardLayout(0, 0);
-		JPanel p1 = new OrdemDeServicoPanel();
-		JPanel p2 = new JPanel();
-		contentPane.setLayout(a);
-		contentPane.add(p2, "p2");
-		contentPane.add(p1, "p1");
-
-		//
-		mntmSair.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-
-			}
-		});
-		//
+		
+		JPanel ordemDeServicoPanel = new OrdemDeServicoPanel(this);
+		JPanel principal = new JPanel();
+		contentPane.setLayout(new CardLayout());
+		contentPane.add(principal, OSFrame.PAINEL_PRINCIPAL);
+		contentPane.add(ordemDeServicoPanel, OSFrame.PAINEL_CADASTRAR_OS);
 	}
 
-	private static void configureFrame(final JFrame frame) {
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		// URL iconFile = OSFrame.class
-		// .getResource("/ts/jservice/swing/Image/TSIcon.png");
-		// frame.setIconImage(Toolkit.getDefaultToolkit().getImage(iconFile));
+	public JPanel getContentPane() {
+		return contentPane;
 	}
-
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
-			}
-
-		});
-	}
-
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "Ordem De Serviço");
-			putValue(SHORT_DESCRIPTION, "Cadastro de ordem");
-		}
-
-		public void actionPerformed(ActionEvent e) {
-
-			a.show(contentPane, "p1");
-
-		}
+	
+	public void showFrame(String nomePainel) {
+		CardLayout a = (CardLayout) contentPane.getLayout();
+		a.show(contentPane, nomePainel);
 	}
 }
