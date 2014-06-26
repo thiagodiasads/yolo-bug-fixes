@@ -1,0 +1,3 @@
+Criar um BD chamado JSevice_BD com usuário e senha conforme arquivo jservice.properties;
+Baixar o mysql-connector-java.jar e inserir no java build path do projeto;
+Executar o script jservice.sql existente no projeto.
