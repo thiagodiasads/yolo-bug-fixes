@@ -22,7 +22,6 @@ public class OrdemDeServicoDAOTest {
 			int previsto = 2;
 			assertTrue("Id gerado (" + idGerada + ") deve ser maior do que o valor previsto (" + previsto + ")", previsto < idGerada);
 		} catch (ClassNotFoundException | IOException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail(e.getMessage());
 		}

@@ -20,7 +20,6 @@ public class Equipamento {
 	}
 
 	public Equipamento() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public void inicializedEquipaments() {
@@ -39,6 +38,14 @@ public class Equipamento {
 			System.out.println(aux.getCodigoEquipamento());
 		}
 		return aux;
+	}
+	
+	public String getMarca() {
+		return marca;
+	}
+
+	public String getModelo() {
+		return modelo;
 	}
 
 	public int getCodigoEquipamento() {

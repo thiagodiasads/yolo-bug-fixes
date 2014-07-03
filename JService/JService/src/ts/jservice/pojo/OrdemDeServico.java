@@ -20,7 +20,6 @@ public class OrdemDeServico {
 	}
 
 	public OrdemDeServico() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getProblema() {
